@@ -1,0 +1,536 @@
+
+
+<body lang=EN-US link=blue vlink=purple style='word-wrap:break-word'>
+
+<div class=WordSection1>
+<p class=MsoListParagraph style='margin-left:53.45pt;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1'><span style='mso-ansi-language:EN-US'>SSL Version 2 and 3 Protocol Detection</span><span
+lang=BG><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=621
+ style='width:466.1pt;border-collapse:collapse'>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Vulnerability Name </span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>SSL Version 2 and 3 Protocol Detection</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Hosts</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>192.168.128.54 192.168.128.55 192.168.128.58 192.168.128.59 192.168.128.68 192.168.128.80 192.168.128.85</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Risk Rating </span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#C00000;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=floatleft><span style='color:white'>Critical</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Description </span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The remote service accepts connections encrypted using SSL 2.0 and/or
+SSL 3.0. These versions of SSL are affected by several cryptographic
+flaws, including:
+
+  - An insecure padding scheme with CBC ciphers.
+
+  - Insecure session renegotiation and resumption schemes.
+
+An attacker can exploit these flaws to conduct man-in-the-middle
+attacks or to decrypt communications between the affected service and
+clients.
+
+Although SSL/TLS has a secure means for choosing the highest supported
+version of the protocol (so that these versions will be used only if
+the client or server support nothing better), many web browsers
+implement this in an unsafe way that allows an attacker to downgrade
+a connection (such as in POODLE). Therefore, it is recommended that
+these protocols be disabled entirely.
+
+NIST has determined that SSL 3.0 is no longer acceptable for secure
+communications. As of the date of enforcement found in PCI DSS v3.1,
+any version of SSL will not meet the PCI SSC's definition of 'strong
+cryptography'.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Recommendations</span></b></p>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Consult the application's documentation to disable SSL 2.0 and 3.0.
+Use TLS 1.2 (with approved cipher suites) or higher instead.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>References </span></b></p>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=656
+   style='width:492.0pt;background:white;border-collapse:collapse'>
+   <thead>
+    <tr>
+     <td width="100%" valign=bottom style='width:100.0%;padding:0in 0in 0in 0in'></td>
+    </tr>
+   </thead>
+   <tr>
+    <td width=656 valign=bottom style='width:492.0pt;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span lang=BG style='color:black'>https://www.schneier.com/academic/paperfiles/paper-ssl.pdf
+http://www.nessus.org/u?b06c7e95
+http://www.nessus.org/u?247c4540
+https://www.openssl.org/~bodo/ssl-poodle.pdf
+http://www.nessus.org/u?5d15ba70
+https://www.imperialviolet.org/2014/10/14/poodle.html
+https://tools.ietf.org/html/rfc7507
+https://tools.ietf.org/html/rfc7568<br></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=BG>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
+
+
+<body lang=EN-US link=blue vlink=purple style='word-wrap:break-word'>
+
+<div class=WordSection1>
+<p class=MsoListParagraph style='margin-left:53.45pt;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1'><span style='mso-ansi-language:EN-US'>Dropbear SSH Server < 2016.72 Multiple Vulnerabilities</span><span
+lang=BG><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=621
+ style='width:466.1pt;border-collapse:collapse'>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Vulnerability Name </span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Dropbear SSH Server < 2016.72 Multiple Vulnerabilities</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Hosts</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>192.168.128.54 192.168.128.55 192.168.128.85 192.168.128.87</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Risk Rating </span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#C00000;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=floatleft><span style='color:white'>Critical</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Description </span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>According to its self-reported version in its banner, Dropbear SSH
+running on the remote host is prior to 2016.74. It is, therefore,
+affected by the following vulnerabilities :
+
+  - A format string flaw exists due to improper handling of
+    string format specifiers (e.g., %s and %x) in usernames
+    and host arguments. An unauthenticated, remote attacker
+    can exploit this to execute arbitrary code with root
+    privileges. (CVE-2016-7406)
+
+  - A flaw exists in dropbearconvert due to improper
+    handling of specially crafted OpenSSH key files. An
+    unauthenticated, remote attacker can exploit this to
+    execute arbitrary code. (CVE-2016-7407)
+
+  - A flaw exists in dbclient when handling the -m or -c
+    arguments in scripts. An unauthenticated, remote attacker
+    can exploit this, via a specially crafted script, to
+    execute arbitrary code. (CVE-2016-7408)
+
+  - A flaw exists in dbclient or dropbear server if they are
+    compiled with the DEBUG_TRACE option and then run using
+    the -v switch. A local attacker can exploit this to
+    disclose process memory. (CVE-2016-7409)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Recommendations</span></b></p>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Upgrade to Dropbear SSH version 2016.74 or later.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>References </span></b></p>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=656
+   style='width:492.0pt;background:white;border-collapse:collapse'>
+   <thead>
+    <tr>
+     <td width="100%" valign=bottom style='width:100.0%;padding:0in 0in 0in 0in'></td>
+    </tr>
+   </thead>
+   <tr>
+    <td width=656 valign=bottom style='width:492.0pt;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span lang=BG style='color:black'>https://matt.ucc.asn.au/dropbear/CHANGES<br></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=BG>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
+
+
+<body lang=EN-US link=blue vlink=purple style='word-wrap:break-word'>
+
+<div class=WordSection1>
+<p class=MsoListParagraph style='margin-left:53.45pt;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1'><span style='mso-ansi-language:EN-US'>SBLIM-SFCB Multiple Buffer Overflows</span><span
+lang=BG><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=621
+ style='width:466.1pt;border-collapse:collapse'>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Vulnerability Name </span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>SBLIM-SFCB Multiple Buffer Overflows</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Hosts</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>192.168.128.85</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Risk Rating </span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#C00000;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=floatleft><span style='color:white'>Critical</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Description </span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The web server component of SBLIM-SFCB that is listening on the
+remote host contains multiple heap-based buffer overflows that can be
+triggered by sending an HTTP request with a specially crafted
+Content-Length header.  Specifically :
+
+ - There is a particular scenario where heap corruption can
+   exist if httpMaxContentLength in sfcb.cfg is set to 0
+   and the Content-Length of a request is 4294967290,
+   getPayload() will try to memcpy() into an incorrectly
+   sized buffer due to wrap around (we add 8 to
+   Content-Length in the malloc). Also, sfcb.cfg states
+   that the default value for httpMaxContentLength _is_ 0,
+   which is untrue.
+
+ - httpAdapter contains a heap overflow that is caused by an
+   HTTP request with the Content-Length value being smaller
+   than the actual size of the payload. The affect of this bug
+   can cause the handling HTTP process to crash. If the
+   request is specially crafted, arbitrary code execution
+   could occur.
+
+Successful exploit of these vulnerabilities may result in a server
+crash or execution of arbitrary code in the context of the server.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Recommendations</span></b></p>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Upgrade to version 1.3.8</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>References </span></b></p>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=656
+   style='width:492.0pt;background:white;border-collapse:collapse'>
+   <thead>
+    <tr>
+     <td width="100%" valign=bottom style='width:100.0%;padding:0in 0in 0in 0in'></td>
+    </tr>
+   </thead>
+   <tr>
+    <td width=656 valign=bottom style='width:492.0pt;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span lang=BG style='color:black'>http://www.nessus.org/u?149a07e1
+http://www.nessus.org/u?8729b62f<br></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=BG>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
+
+
+<body lang=EN-US link=blue vlink=purple style='word-wrap:break-word'>
+
+<div class=WordSection1>
+<p class=MsoListParagraph style='margin-left:53.45pt;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo1'><span style='mso-ansi-language:EN-US'>SuperMicro Device Uses Default SSH Host Key</span><span
+lang=BG><br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=621
+ style='width:466.1pt;border-collapse:collapse'>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Vulnerability Name </span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>SuperMicro Device Uses Default SSH Host Key</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Hosts</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>192.168.128.85</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Risk Rating </span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#C00000;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span class=floatleft><span style='color:white'>Critical</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Description </span></b></p>
+  <p class=MsoNormal><b><span style='font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The SSH host key used by the remote host has not been changed from the
+default host key that is hardwired into the firmware.  The private key
+corresponding to this host key is shared across all devices running the
+same firmware, meaning that the remote host's key certificate cannot be
+trusted.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>Recommendations</span></b></p>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Configure the device to use a device-specific host key.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=141 valign=top style='width:106.1pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>References </span></b></p>
+  <p class=MsoNormal style='text-autospace:none'><b><span style='font-family:
+  "Calibri",sans-serif;color:black'>&nbsp;</span></b></p>
+  </td>
+  <td width=480 valign=top style='width:5.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=656
+   style='width:492.0pt;background:white;border-collapse:collapse'>
+   <thead>
+    <tr>
+     <td width="100%" valign=bottom style='width:100.0%;padding:0in 0in 0in 0in'></td>
+    </tr>
+   </thead>
+   <tr>
+    <td width=656 valign=bottom style='width:492.0pt;padding:0in 0in 0in 0in'>
+    <p class=MsoNormal><span lang=BG style='color:black'>http://www.nessus.org/u?f7e3f14d<br></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=BG>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
